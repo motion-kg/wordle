@@ -1,46 +1,50 @@
-# Getting Started with Create React App
+## Документация API для Wordle
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Обзор
 
-## Available Scripts
+Этот раздел документации посвящен API, используемому для игры Wordle. API предоставляет доступ к списку пятибуквенных слов, необходимых для игрового процесса.
 
-In the project directory, you can run:
+### API конечные точки
 
-### `yarn start`
+```
+http://3.38.98.134/words
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+#### Слова (words)
 
-### `yarn test`
+* **`/words`**: Возвращает список всех возможных пятибуквенных слов.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Доступ к API
 
-### `yarn build`
+API доступен по адресу: http://3.38.98.134/docs
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Документация API в формате Swagger доступна по тому же адресу.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Использование API
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Для использования API вам потребуется:
 
-### `yarn eject`
+1. **Получить список слов**: Отправьте GET запрос на конечную точку `/words`. Сервер вернет список пятибуквенных слов в формате JSON.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**Пример запроса:**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+GET /words
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**Пример ответа:**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```json
+[
+  "apple",
+  "grape",
+  "lemon",
+  // ...
+]
+```
 
-## Learn More
+### Важные замечания
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+* API предоставляет только список слов, без какой-либо дополнительной информации или функциональности.
+* Используйте полученные данные ответственно и в соответствии с правилами игры Wordle.
